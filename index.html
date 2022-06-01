@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIN GYU</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      var $menu_id = window.location.hash.substring(1)
+      if ($menu_id == "") {
+        $menu_id = "menu_" + "About_me";
+      }
+      else {
+        $menu_id = "menu_" + $menu_id;
+      }
+      $(".nav-link").each(function () {
+        $(this).removeClass("active");
+        if ($(this).attr("target-menu") == $menu_id) {
+          $(this).addClass("active");
+        }
+
+        $(".menu_template").each(function () {
+          if ($(this).attr("id") == $menu_id) {
+            $(this).show();
+          } else {
+            $(this).hide();
+          }
+        });
+
+      });
+
+      $(".nav-link").click(function () {
+        $(".nav-link").removeClass("active");
+        $(this).addClass("active");
+
+        menu_id = $(this).attr("target-menu");
+        $(".menu_template").each(function () {
+          if ($(this).attr("id") == menu_id) {
+            $(this).show();
+          } else {
+            $(this).hide();
+          }
+        });
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="navbar_home">
+      <a href="#">MIN GYU CHOI</a>
+    </div>
+    <div class="menu_container" id="navbarResponsive">
+      <ul class="navbar_menu">
+        <li class="nav-item"><a class="nav-link active" href="#About_me" target-menu="menu_About_me">About_me</a></li>
+        <li class="nav-item"><a class="nav-link" href="#Favorite Book1" target-menu="menu_content1">Favorite Book1</a></li>
+        <li class="nav-item"><a class="nav-link" href="#Favorite Book2" target-menu="menu_content2">Favorite Book2</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="container">
+
+    <div class="section">
+      <div class="menu_template" id="menu_About_me">
+        <div class="inner-section">
+          <img id="picture1" src="나.jpeg">
+          <div class="content">
+            <h2>ABOUT ME</h2>
+            <h3>이름 : 최민규</h3>
+            <h3>학교 : 강원대학교</h3>
+            <h3>학과 : 컴퓨터공학과</h3>
+            <h3>출생, 거주지 : 춘천</h3>
+            <h3>취미 : 독서, 드라마, 배드민턴, 산책</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="menu_template" id="menu_content1" style="">
+        <div class="inner-section">
+          <img id="picture2" src="물고기.jpeg">
+          <div class="content">
+            <h2>"물고기는 존재하지 않는다"</h2>
+            <h3>저자 : 룰루 밀러</h3>
+            <h3>출판사 : 곰출판</h3>
+            <p>‘방송계의 퓰리처상’ 피버디상 수상자 룰루 밀러의 사랑과 혼돈, 과학적 집착에 관한 경이롭고도 충격적인 데뷔작!<br>
+              집착에 가까울 만큼 자연계에 질서를 부여하려 했던 19세기 어느 과학자의 삶을 흥미롭게 좇아가는<br>
+              이 책은 어느 순간 독자들을 혼돈의 한복판으로 데려가서 우리가 믿고 있던 삶의 질서에 관해 한 가지 의문을 제기한다.<br>
+              “물고기가 존재하지 않는다는 것은 엄연한 하나의 사실이다. 그렇다면 우리는 또 무엇을 잘못 알고 있을까?” 하고 말이다.<br>
+              누군가에게는 이 질문이 살아가는 데 아무런 영향을 미치지 않을 수도 있다. 하지만 세상을 바라보는 “진실한 관계들”에<br>
+              한층 가까이 다가가기 위해 노력하는 사람들에게는 분명 이 책이 놀라운 영감과 어느 한쪽으로도 치우치지 않는 폭넓은 시야를<br>
+              제공해줄 것이다. 《물고기는 존재하지 않는다》는 세계라는 거대한 구조 속에서 ‘물고기는(그리고 우리는) 어떤 존재인가’에<br>
+              관해 우리의 관념을 뒤집어엎으며 자유분방한 여정을 그려나간다. 사랑을 잃고 삶이 끝났다고 생각한 그 순간<br>
+              ‘데이비드 스탄 조던’을 우연히 알게 된 저자는 그가 혼돈에 맞서 싸우는 것을 전혀 두려워하지 않는 모습에 매혹되어<br>
+              그의 삶을 추적해나가기 시작한다. 저자 역시 이 세계에서 “혼돈이란 ‘그런 일이 일어난다면’의 가정의 문제가 아니라<br>
+              ‘언제 일어나는가’의 시기의 문제”이며, 어느 누구도 이 진리를 피할 수 없다고 생각해왔기 때문이다. 하지만 조던의 이야기는<br>
+              독자들을 전혀 예상하지 못한 곳으로 이끌며, 이윽고 엄청난 충격으로 우리의 눈을 번쩍 뜨이게 만든다.<br>
+              룰루 밀러가 친밀하면서도 독특한 방식으로 들려주는 이 책은 과학에 관한 고군분투이자 사랑과 상실, 혼돈에 관한 이야기다.<br>
+              나아가 신념이 어떻게 우리를 지탱해주며, 동시에 그 신념이 어떻게 유해한 것으로 변질될 수 있는지를 알려준다.<br></p>            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="menu_template" id="menu_content2" style="">
+        <div class="inner-section">
+          <img id="picture3" src="카스테라.jpeg">
+          <div class="content">
+            <h2>"카스테라"</h2>
+            <h3>저자 : 박민규</h3>
+            <h3>출판 : 문학동네</h3>
+            <p>2003년 여름, 단 두 권의 소설(<지구영웅전설>, <삼미 슈퍼스타즈의 마지막 팬클럽>)로 한국 소설계에 새로운 바람을 몰고 온 소설가 박민규가 등단 2년 만에 첫 작품집 <카스테라>를
+                    펴냈다.<br>
+                    2003년 여름부터 2005년 봄까지 여러 문예지에 발표한 단편 10편이 수록된 책으로, 작가 특유의 유쾌하고 독특한 글쓰기가 돋보인다.<br>
+                    (연합뉴스와의 인터뷰에 의하면, "7년 간 길렀던 긴 머리를 잘라 노랗게 염색한 데다 히피들이 즐겨썼던 독특한 선글라스를 끼고 나타난 그는<br>
+                    '어릴 때부터 좋아했던 지미 핸드릭스의 타입으로 (머리모양 등을) 해봤다'면서 '그동안 써놓은 30편의 단편 가운데 10편을 추려 이번 작품집에 실었다.<br>
+                    10편을 수록한 것은 추앙하는 지미 핸드릭스의 데뷔앨범에도 10곡이 실렸기 때문'"이라고 설명했다 한다.) 자유분방한 상상력으로 빚어낸 특이한 상황과 인물 설정,<br>
+                    감각적이고 신선한 문체 등 자신만의 스타일을 발전시키고 있는 작가 박민규의 모습을 엿볼 수 있다.<br>
+                    전생에 훌리건이 아니었을까 싶을 만큼 시끄러운 냉장고와 동거하는 자취생('카스테라'), 링고 스타와 함께 버스를 타고 떠나는 우주여행('몰라 몰라, 개복치라니'),<br>
+                    집안이 어려워 돈을 벌기 위해 지하철의 '푸시맨'이 된 고등학생('그렇습니까? 기린입니다') 등, 제목과 설정 하나하나가 독특하고 톡톡 튄다. 밑바닥 삶에 대한 애정과 자본주의에
+                    대한 비판,<br>
+                    지구 밖으로 뻗어가는 파격적 상상력, 이를 아우르는 스타일리시한 문체와 유머 등, 박민규라는 작가의 개성을 마음껏 만끽할 수 있는 단편집이다.<br></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
